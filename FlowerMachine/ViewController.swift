@@ -9,11 +9,14 @@
 import UIKit
 import CoreML
 import Vision
+import Alamofire //going to use this to pull information about the flowers from Wikipedia.
+import SwiftyJSON
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var imageView: UIImageView!
     
+    let wikipediaAPI = "https://en.wikipedia.org/w/api.php"
     let imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
@@ -50,8 +53,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
         
         let mlRequest = VNCoreMLRequest(model: mlModel) { (request, error) in
-            let classification = request.results?.first as? VNClassificationObservation
-            self.navigationItem.title = classification?.identifier
+            guard let classification = request.results?.first as? VNClassificationObservation else {
+                fatalError("Couldnt classify the image")
+            }
+            self.navigationItem.title = classification.identifier.capitalized
+            self.requestWikipediaInfo(flowerName: classification.identifier) //passing the identified flower name into the wikipedia.
         }
         
         let requestHandler = VNImageRequestHandler(ciImage: image)
@@ -61,6 +67,26 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             print("error requesting from the ml model \(error)")
         }
         
+    }
+    
+    func requestWikipediaInfo(flowerName : String) {
+        let parameters : [String : String] = [
+            "format" : "json",
+            "action" : "query",
+            "prop" : "extracts",
+            "exintro" : "",
+            "explaintext" : "",
+            "titles" : flowerName,
+            "indexpageids" : "",
+            "redirects" : "1",
+        ]
+        
+        Alamofire.request(wikipediaAPI, method: .get, parameters: parameters).responseJSON { (response) in
+            if response.result.isSuccess {
+                print("Wiki info received")
+                print(response)
+            }
+        }
     }
 
     @IBAction func cameraPressed(_ sender: UIBarButtonItem) {

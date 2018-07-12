@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7DD66C2D0827B3EB4CF1F37A /* Pods_FlowerMachine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8185A621F70A20A42521DA33 /* Pods_FlowerMachine.framework */; };
 		E60AE74F20F775E400AD0E49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60AE74E20F775E400AD0E49 /* AppDelegate.swift */; };
 		E60AE75120F775E400AD0E49 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60AE75020F775E400AD0E49 /* ViewController.swift */; };
 		E60AE75420F775E400AD0E49 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E60AE75220F775E400AD0E49 /* Main.storyboard */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8185A621F70A20A42521DA33 /* Pods_FlowerMachine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlowerMachine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEEE85EB97D932C5D996E73D /* Pods-FlowerMachine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlowerMachine.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlowerMachine/Pods-FlowerMachine.debug.xcconfig"; sourceTree = "<group>"; };
+		E48F5F6069DC98E8E4BBE1BB /* Pods-FlowerMachine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlowerMachine.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlowerMachine/Pods-FlowerMachine.release.xcconfig"; sourceTree = "<group>"; };
 		E60AE74B20F775E400AD0E49 /* FlowerMachine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowerMachine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E60AE74E20F775E400AD0E49 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E60AE75020F775E400AD0E49 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -31,17 +35,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DD66C2D0827B3EB4CF1F37A /* Pods_FlowerMachine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B07647ABD7E34220FE0585F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DEEE85EB97D932C5D996E73D /* Pods-FlowerMachine.debug.xcconfig */,
+				E48F5F6069DC98E8E4BBE1BB /* Pods-FlowerMachine.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E60AE74220F775E400AD0E49 = {
 			isa = PBXGroup;
 			children = (
 				E60AE74D20F775E400AD0E49 /* FlowerMachine */,
 				E60AE74C20F775E400AD0E49 /* Products */,
+				0B07647ABD7E34220FE0585F /* Pods */,
+				EF3B069E206C98C0C38B9E45 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +83,14 @@
 			path = FlowerMachine;
 			sourceTree = "<group>";
 		};
+		EF3B069E206C98C0C38B9E45 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8185A621F70A20A42521DA33 /* Pods_FlowerMachine.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +98,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E60AE75D20F775E500AD0E49 /* Build configuration list for PBXNativeTarget "FlowerMachine" */;
 			buildPhases = (
+				F79655D945F0ED933A3A0300 /* [CP] Check Pods Manifest.lock */,
 				E60AE74720F775E400AD0E49 /* Sources */,
 				E60AE74820F775E400AD0E49 /* Frameworks */,
 				E60AE74920F775E400AD0E49 /* Resources */,
+				A077DA6204E746C83EDB558F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +158,47 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A077DA6204E746C83EDB558F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FlowerMachine/Pods-FlowerMachine-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlowerMachine/Pods-FlowerMachine-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F79655D945F0ED933A3A0300 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FlowerMachine-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E60AE74720F775E400AD0E49 /* Sources */ = {
@@ -282,6 +349,7 @@
 		};
 		E60AE75E20F775E500AD0E49 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DEEE85EB97D932C5D996E73D /* Pods-FlowerMachine.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +368,7 @@
 		};
 		E60AE75F20F775E500AD0E49 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E48F5F6069DC98E8E4BBE1BB /* Pods-FlowerMachine.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
