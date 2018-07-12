@@ -16,7 +16,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     @IBOutlet weak var imageView: UIImageView!
     
-    let wikipediaAPI = "https://en.wikipedia.org/w/api.php"
+    let wikipediaAPI = "https://en.wikipedia.org/w/api.php" 
     let imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
