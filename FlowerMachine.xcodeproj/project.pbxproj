@@ -12,6 +12,7 @@
 		E60AE75420F775E400AD0E49 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E60AE75220F775E400AD0E49 /* Main.storyboard */; };
 		E60AE75620F775E500AD0E49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E60AE75520F775E500AD0E49 /* Assets.xcassets */; };
 		E60AE75920F775E500AD0E49 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E60AE75720F775E500AD0E49 /* LaunchScreen.storyboard */; };
+		E60AE76120F776BC00AD0E49 /* FlowerClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E60AE76020F776BC00AD0E49 /* FlowerClassifier.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		E60AE75520F775E500AD0E49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E60AE75820F775E500AD0E49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E60AE75A20F775E500AD0E49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E60AE76020F776BC00AD0E49 /* FlowerClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FlowerClassifier.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				E60AE75220F775E400AD0E49 /* Main.storyboard */,
 				E60AE75520F775E500AD0E49 /* Assets.xcassets */,
 				E60AE75720F775E500AD0E49 /* LaunchScreen.storyboard */,
+				E60AE76020F776BC00AD0E49 /* FlowerClassifier.mlmodel */,
 				E60AE75A20F775E500AD0E49 /* Info.plist */,
 			);
 			path = FlowerMachine;
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E60AE76120F776BC00AD0E49 /* FlowerClassifier.mlmodel in Sources */,
 				E60AE75120F775E400AD0E49 /* ViewController.swift in Sources */,
 				E60AE74F20F775E400AD0E49 /* AppDelegate.swift in Sources */,
 			);
