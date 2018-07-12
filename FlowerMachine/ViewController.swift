@@ -82,13 +82,25 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         ]
         
         Alamofire.request(wikipediaAPI, method: .get, parameters: parameters).responseJSON { (response) in
-            if response.result.isSuccess {
+            if response.result.isSuccess { //got alomofire response from wikipedia. now need to parse it with swiftyJSON
                 print("Wiki info received")
                 print(response)
+                
+                let responseJSON : JSON = JSON(response.result.value!)
+                let pageID = responseJSON["query"]["pageids"][0].stringValue //get the 0th object of the pageid
+                //need to pass the key to pages in order to get the extract from the wikipedia
+                
+                let wikiDescription = responseJSON["query"]["pages"][pageID]["extract"].stringValue
+                
+                self.textLabel.text = wikiDescription
+                
             }
         }
     }
-
+    
+    
+    @IBOutlet weak var textLabel: UILabel!
+    
     @IBAction func cameraPressed(_ sender: UIBarButtonItem) {
         present(imagePicker, animated: true, completion: nil)
     }

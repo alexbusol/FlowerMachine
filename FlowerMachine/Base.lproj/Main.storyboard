@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,16 +19,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="erR-dl-CYV">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="erR-dl-CYV">
+                                <rect key="frame" x="0.0" y="64" width="375" height="313"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="erR-dl-CYV" secondAttribute="height" multiplier="375:313" id="cRo-DE-FLf"/>
+                                </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="eIO-JW-ptg">
+                                <rect key="frame" x="8" y="385" width="359" height="276"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="erR-dl-CYV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="6rK-Xi-l37"/>
-                            <constraint firstItem="erR-dl-CYV" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="enl-9O-rFm"/>
-                            <constraint firstItem="erR-dl-CYV" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="fcC-7H-Z3t"/>
-                            <constraint firstItem="erR-dl-CYV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nua-BD-SjT"/>
+                            <constraint firstItem="erR-dl-CYV" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="0OB-wf-4Ti"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eIO-JW-ptg" secondAttribute="trailing" constant="8" id="4Bw-Qi-alg"/>
+                            <constraint firstItem="erR-dl-CYV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5MB-Tb-RJj"/>
+                            <constraint firstItem="eIO-JW-ptg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="Bwv-AW-C1c"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eIO-JW-ptg" secondAttribute="bottom" constant="6" id="CYf-Hp-Cli"/>
+                            <constraint firstItem="eIO-JW-ptg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="EdB-h4-hmU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eIO-JW-ptg" secondAttribute="trailing" constant="8" id="FMH-q5-WZg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eIO-JW-ptg" secondAttribute="bottom" constant="6" id="Pue-Km-dZi"/>
+                            <constraint firstItem="erR-dl-CYV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="bib-CE-fug"/>
+                            <constraint firstItem="eIO-JW-ptg" firstAttribute="top" secondItem="erR-dl-CYV" secondAttribute="bottom" constant="8" id="crW-cj-lnd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -40,6 +56,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="erR-dl-CYV" id="CCi-a6-VcP"/>
+                        <outlet property="textLabel" destination="eIO-JW-ptg" id="h3F-R6-Io7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
