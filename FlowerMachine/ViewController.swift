@@ -16,18 +16,29 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     @IBOutlet weak var imageView: UIImageView!
     
-    let wikipediaAPI = "https://en.wikipedia.org/w/api.php" 
+    let wikipediaAPI = "https://en.wikipedia.org/w/api.php"
     let imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        imagePicker.delegate = self
-        imagePicker.allowsEditing = false //change to true to allow users to edit their images
-        imagePicker.sourceType = .photoLibrary  //change to .camera to allow picking images directly from camera
         
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+        imageView.isUserInteractionEnabled = true
+        imageView.addGestureRecognizer(tapGestureRecognizer)
         
+        imageView.image = UIImage(named: "machine.png")
         
     }
+    
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = false //change to true to allow users to edit their images
+        imagePicker.sourceType = .photoLibrary  //picking from the library if the image is tapped
+        present(imagePicker, animated: true, completion: nil)
+
+    }
+    
     //triggers after user selected the image
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
@@ -102,6 +113,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var textLabel: UILabel!
     
     @IBAction func cameraPressed(_ sender: UIBarButtonItem) {
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = false //change to true to allow users to edit their images
+        imagePicker.sourceType = .camera  //change to .photoLibrary to allow picking images directly from camera
         present(imagePicker, animated: true, completion: nil)
     }
     
